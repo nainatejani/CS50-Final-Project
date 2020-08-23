@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Respond to Projects
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name of Project</th>
+                <th>Survey for Project</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for project in projects %}
+                <tr>
+                    <td>{{ project.projectname }}</td>
+                    <td><a href="{{project.link}}">Survey: {{ project.projectname }}</td></a>
+                </tr>
+            {% endfor %}
+
+
+        </tbody>
+
+
+    </table>
+    <body>
+        <p>
+             <a href="/" target="_self"> Back to Homepage </a>
+        </p>
+    </body>
+{% endblock %}
